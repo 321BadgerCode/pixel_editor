@@ -1,0 +1,107 @@
+/* 🌌 Root Color Scheme */
+:root {
+	--bg-color: #111;
+	--panel-bg: #1a1a1a;
+	--text-color: #eee;
+	--accent-color: #0ff;
+	--neon-glow: 0 0 8px var(--accent-color), 0 0 16px var(--accent-color);
+	--gradient: linear-gradient(135deg, #0ff, #08f, #f0f, #f08);
+	--button-gradient: linear-gradient(90deg, #ff0080, #7928ca);
+}
+
+/* 🌑 Base Styling */
+body {
+	margin: 0;
+	padding: 2em;
+	background: var(--bg-color);
+	font-family: 'Segoe UI', sans-serif;
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#title {
+	font-size: 2rem;
+	background: var(--gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-bottom: 1em;
+}
+
+/* 🎛 Controls */
+.controls {
+	background: var(--panel-bg);
+	padding: 1em;
+	border-radius: 10px;
+	box-shadow: var(--neon-glow);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	justify-content: center;
+	margin-bottom: 1em;
+}
+
+label {
+	color: var(--text-color);
+	font-size: 0.9rem;
+}
+
+input[type="number"],
+input[type="color"],
+select,
+button {
+	padding: 0.4em 0.8em;
+	border-radius: 6px;
+	border: none;
+	outline: none;
+	background: #222;
+	color: var(--text-color);
+	font-size: 0.9rem;
+	box-shadow: 0 0 5px #0ff5;
+	transition: all 0.2s ease;
+}
+
+input[type="color"] {
+	padding: 0;
+	height: 2em;
+	width: 2.5em;
+	cursor: pointer;
+	border: 2px solid var(--accent-color);
+}
+
+/* ✨ Buttons & Selects */
+button {
+	background: var(--button-gradient);
+	color: #fff;
+	cursor: pointer;
+	border: none;
+	box-shadow: var(--neon-glow);
+	transition: transform 0.1s;
+}
+
+button:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 12px #0ff, 0 0 24px #0ff;
+}
+
+select:hover,
+input[type="number"]:hover {
+	box-shadow: 0 0 8px #0ff7;
+}
+
+/* 🎨 Canvas */
+canvas {
+	background: #fff;
+	image-rendering: pixelated;
+	border: 2px solid var(--accent-color);
+	box-shadow: 0 0 12px #0ff3;
+}
+
+/* 🟡 ROYGBIV Dropdown dynamic */
+#roygbiv-dropdown {
+	font-weight: bold;
+	color: #000;
+	background-color: #fff;
+	transition: background 0.3s ease, color 0.3s ease;
+}

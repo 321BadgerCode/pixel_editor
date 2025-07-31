@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Security-Policy" content="
+		default-src 'self';
+		script-src 'self';
+		style-src 'self' 'unsafe-inline';
+		img-src 'self' data: blob: filesystem:;
+		connect-src 'self';
+		font-src 'self' data:;
+		media-src 'self' blob:;
+		object-src 'none';
+		base-uri 'none';
+	">
+	<title>Pixel Editor</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>🎨 <span id="title">Pixel Editor</span></h1>
+
+	<div class="controls">
+		<label>Width: <input id="grid-width" type="number" min="1" value="16"></label>
+		<label>Height: <input id="grid-height" type="number" min="1" value="16"></label>
+		<button id="resize-btn">Resize Grid</button>
+		<input type="color" id="color-picker" value="#000000">
+		<select id="roygbiv-dropdown">
+			<option disabled selected>ROYGBIV</option>
+			<option value="#000000">Black</option>
+			<option value="#ffffff">White</option>
+			<option value="#ff0000">Red</option>
+			<option value="#ffa500">Orange</option>
+			<option value="#ffff00">Yellow</option>
+			<option value="#008000">Green</option>
+			<option value="#0000ff">Blue</option>
+			<option value="#4b0082">Indigo</option>
+			<option value="#ee82ee">Violet</option>
+		</select>
+		<select id="tool">
+			<option value="pencil">✏️ Pencil</option>
+			<option value="fill">🪣 Fill</option>
+			<option value="eraser">🧼 Eraser</option>
+		</select>
+		<button id="clear-btn">🗑️ Clear</button>
+		<button id="import-btn">📁 Import</button>
+		<button id="export-btn">💾 Export</button>
+	</div>
+
+	<canvas id="pixel-canvas"></canvas>
+
+	<script src="renderer.js"></script>
+</body>
+</html>
