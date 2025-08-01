@@ -11,6 +11,8 @@
 		"electron-builder": "^26.0.12"
 	},
 	"build": {
+		"asar": true,
+		"nodeGypRebuild": false,
 		"files": [
 			"index.html",
 			"main.js",

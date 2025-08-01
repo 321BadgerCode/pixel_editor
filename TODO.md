@@ -1,0 +1,3 @@
+- [ ] Fix eraser: Needs pencil white on erased tiles.
+- [ ] Fix triple click to make line between 2 pixels (start, end, back to start with same color).
+- [ ] Minimize build file size (most likely due to `package.json`).
